@@ -47,14 +47,15 @@ markdownlint-cli2 --fix
 
 [tasks."docs:check"]
 description = "Run every documentation check"
-depends = [
-  "docs:setup",
-  "docs:structure",
-  "docs:spell",
-  "docs:style",
-  "docs:prose",
-  "docs:build",
-]
+run = """
+set -e
+mise run docs:setup
+mise run docs:structure
+mise run docs:spell
+mise run docs:style
+mise run docs:prose
+mise run docs:build
+"""
 
 [tasks.check]
 description = "Alias for docs:check while the repository has no code"
