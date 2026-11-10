@@ -2,6 +2,7 @@
 python = "3.13"
 uv = "0.12"
 vale = "3.26"
+gitleaks = "8.30"
 "npm:markdownlint-cli2" = "0.24"
 
 [tasks."docs:setup"]
@@ -57,6 +58,10 @@ mise run docs:prose
 mise run docs:build
 """
 
+[tasks."secrets:check"]
+description = "Scan the full history for a secret"
+run = "gitleaks git --redact --no-banner --exit-code 1 ."
+
 [tasks.check]
-description = "Alias for docs:check while the repository has no code"
-depends = ["docs:check"]
+description = "Run every check"
+depends = ["docs:check", "secrets:check"]

@@ -18,5 +18,18 @@ jobs:
 
       - uses: jdx/mise-action@v2
 
-      - name: Run every check
+      - name: Run every documentation check
         run: mise run docs:check
+
+  secrets:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: jdx/mise-action@v2
+
+      - name: Scan the full history
+        run: mise run secrets:check

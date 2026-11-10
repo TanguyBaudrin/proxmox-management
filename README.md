@@ -31,9 +31,16 @@ in `docs/`. It builds with MkDocs.
 ```bash
 mise install
 mise run docs:serve      # local preview on http://127.0.0.1:8000
-mise run docs:check      # every check that CI runs
+mise run check           # every check that CI runs
 ```
+
+## Security
+
+The repository is public and holds no secret. Secrets come from Bitwarden
+through `fnox`. GitHub secret scanning and push protection are enabled, and
+`mise run check` scans the full history with `gitleaks`. See
+[docs/adr/0010-public-repository-and-secret-hygiene.md](docs/adr/0010-public-repository-and-secret-hygiene.md).
 
 ## License
 
-Private. No license is granted.
+No license is granted.

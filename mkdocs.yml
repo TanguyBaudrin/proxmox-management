@@ -40,6 +40,7 @@ nav:
       - "0007 Restore and rebuild": adr/0007-restore-and-rebuild.md
       - "0008 Update policy": adr/0008-update-policy.md
       - "0009 External exposure": adr/0009-external-exposure.md
+      - "0010 Public repository and secret hygiene": adr/0010-public-repository-and-secret-hygiene.md
   - How-to guides:
       - how-to/provision-a-guest.md
       - how-to/rebuild-a-guest.md

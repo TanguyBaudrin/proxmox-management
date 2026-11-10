@@ -30,6 +30,8 @@ anything. The layer model defines what this repository may write.
 - **Do not add an unmanaged guest to the inventory.** Unmanaged guests stay
   unmanaged until someone writes a guest file for them.
 - **Do not commit a secret.** Secrets come from Bitwarden through `fnox`.
+  The repository is public. See
+  [ADR-0010](docs/adr/0010-public-repository-and-secret-hygiene.md).
 
 ## 3. Documentation rules
 
@@ -55,12 +57,12 @@ anything. The layer model defines what this repository may write.
 Run the full set before you commit.
 
 ```bash
-mise run docs:check
+mise run check
 ```
 
 The command runs the structure checks, the prose checks, the spell check, the
-Markdown lint, and a strict MkDocs build. See
-[docs/reference/doc-checks.md](docs/reference/doc-checks.md).
+Markdown lint, a strict MkDocs build, and a scan of the full Git history for a
+secret. See [docs/reference/doc-checks.md](docs/reference/doc-checks.md).
 
 ## 5. Layout
 
@@ -83,9 +85,11 @@ styles/                 Vale style pack
 
 | Command | Effect |
 | --- | --- |
-| `mise install` | Install the documentation toolchain |
+| `mise install` | Install the toolchain |
+| `mise run check` | Run the documentation checks and the secret scan |
+| `mise run docs:check` | Run the documentation checks only |
+| `mise run secrets:check` | Scan the full Git history for a secret |
 | `mise run docs:serve` | Serve the documentation locally |
-| `mise run docs:check` | Run every check |
 | `mise run docs:fix` | Apply the automatic fixes that exist |
 
 ## 7. Out of scope
