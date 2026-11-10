@@ -76,6 +76,12 @@ gh pr create --fill
 gh pr merge --squash --auto
 ```
 
+Install the local secret hook once per clone.
+
+```bash
+mise generate git-pre-commit --task=secrets:check --write
+```
+
 ## 5. Layout
 
 ```text
