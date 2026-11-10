@@ -64,6 +64,18 @@ The command runs the structure checks, the prose checks, the spell check, the
 Markdown lint, a strict MkDocs build, and a scan of the full Git history for a
 secret. See [docs/reference/doc-checks.md](docs/reference/doc-checks.md).
 
+`main` accepts a pull request only. A pull request needs no approval, and it
+needs both status checks. See
+[docs/adr/0010](docs/adr/0010-public-repository-and-secret-hygiene.md).
+
+```bash
+git switch -c docs/<change>
+git add -A && git commit
+git push -u origin docs/<change>
+gh pr create --fill
+gh pr merge --squash --auto
+```
+
 ## 5. Layout
 
 ```text

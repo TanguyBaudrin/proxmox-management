@@ -29,9 +29,10 @@ copy after a deletion.
 
 The repository is public.
 
-- Branch protection requires the `docs / Documentation checks` and
-  `docs / Secret scan` status checks. Force push and deletion are off on
-  `main`.
+- Branch protection requires a pull request, the `docs / Documentation checks`
+  and `docs / Secret scan` status checks, and no approval. Force push and
+  deletion are off. A solo author cannot approve a personal change, so the
+  approval count stays at zero.
 - Secret scanning and push protection are enabled. Both are free for a public
   repository.
 - `gitleaks` scans the full history in CI. The same command runs before each
