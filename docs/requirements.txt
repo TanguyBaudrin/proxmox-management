@@ -1,2 +1,2 @@
-mkdocs-material==9.8.1
+zensical==0.1.0
 codespell==2.4.3

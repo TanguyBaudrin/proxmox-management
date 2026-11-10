@@ -33,3 +33,35 @@ jobs:
 
       - name: Scan the full history
         run: mise run secrets:check
+
+  publish:
+    name: Publish the site
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: [check, secrets]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.publish.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: jdx/mise-action@v2
+
+      - uses: actions/configure-pages@v6
+
+      - name: Build the site
+        run: mise run docs:build
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
+      - id: publish
+        uses: actions/deploy-pages@v5

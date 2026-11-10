@@ -61,8 +61,12 @@ mise run check
 ```
 
 The command runs the structure checks, the prose checks, the spell check, the
-Markdown lint, a strict MkDocs build, and a scan of the full Git history for a
+Markdown lint, a strict Zensical build, and a scan of the full Git history for a
 secret. See [docs/reference/doc-checks.md](docs/reference/doc-checks.md).
+
+A push to `main` publishes the site to GitHub Pages. The publish job waits for
+both checks. See
+[docs/adr/0011](docs/adr/0011-documentation-engine-and-publishing.md).
 
 `main` accepts a pull request only. A pull request needs no approval, and it
 needs both status checks. See
@@ -93,6 +97,7 @@ docs/
   reference/            rules and facts, STE100
   explanation/          reasoning, plain English
   tutorials/            guided learning, empty until v0.2
+mkdocs.yml              Zensical configuration, also valid for MkDocs
 scripts/
   check_docs.py         structure and prose checks
   terminology.json      canonical terms and banned variants
