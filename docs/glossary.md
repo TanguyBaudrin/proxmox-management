@@ -64,6 +64,7 @@ documentation check fails when a variant appears.
 | JSON | JavaScript Object Notation |
 | LXC | Linux Containers |
 | MAC | Media Access Control, the hardware address of a network interface |
+| MIT | Massachusetts Institute of Technology, the permissive license of this repository |
 | NAS | Network Attached Storage |
 | NFS | Network File System |
 | OS | Operating System |

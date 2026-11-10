@@ -32,6 +32,9 @@ anything. The layer model defines what this repository may write.
 - **Do not commit a secret.** Secrets come from Bitwarden through `fnox`.
   The repository is public. See
   [ADR-0010](docs/adr/0010-public-repository-and-secret-hygiene.md).
+- **The license is MIT.** A contribution arrives under the same terms. Never
+  add a conflicting header. See
+  [ADR-0012](docs/adr/0012-license.md).
 
 ## 3. Documentation rules
 

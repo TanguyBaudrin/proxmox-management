@@ -5,6 +5,7 @@ site_description: Manage Proxmox guests and their exposure as code
 site_url: https://tanguybaudrin.github.io/proxmox-management/
 repo_url: https://github.com/TanguyBaudrin/proxmox-management
 repo_name: TanguyBaudrin/proxmox-management
+copyright: Copyright 2026 Tanguy Baudrin. MIT license.
 docs_dir: docs
 strict: true
 
@@ -47,6 +48,7 @@ nav:
       - "0009 External exposure": adr/0009-external-exposure.md
       - "0010 Public repository and secret hygiene": adr/0010-public-repository-and-secret-hygiene.md
       - "0011 Documentation engine and publishing": adr/0011-documentation-engine-and-publishing.md
+      - "0012 License": adr/0012-license.md
   - How-to guides:
       - how-to/provision-a-guest.md
       - how-to/rebuild-a-guest.md

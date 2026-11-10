@@ -44,4 +44,5 @@ through `fnox`. GitHub secret scanning and push protection are enabled, and
 
 ## License
 
-No license is granted.
+MIT. Use the content, change it, sell it, and keep the copyright notice. See
+[LICENSE](LICENSE).
