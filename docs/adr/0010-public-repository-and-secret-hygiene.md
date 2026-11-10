@@ -35,8 +35,8 @@ The repository is public.
   approval count stays at zero.
 - Secret scanning and push protection are enabled. Both are free for a public
   repository.
-- `gitleaks` scans the full history in CI. The same command runs before each
-  local commit, and `mise run check` includes it.
+- `gitleaks` scans the staged changes before each local commit and the full
+  history in CI. `mise run check` includes the full scan.
 - A guest file never holds a secret. It holds no password, no token, and no
   private key. It holds a reference to a Bitwarden item instead.
 - A guest file holds real addresses. The inventory needs them, and an address
@@ -48,6 +48,8 @@ The repository is public.
 
 - A leaked secret is public in seconds. Push protection and the local hook are
   the only defence, and both act before the push.
+- Push protection detects a known provider format only. A generic token passes
+  it, and the staged scan and the CI scan carry the real weight.
 - A fork keeps the history after a deletion. A revocation in Bitwarden is the
   real remedy, not a history rewrite.
 - A stranger can open an issue or a pull request. The default token is
