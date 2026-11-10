@@ -1,0 +1,53 @@
+site_name: proxmox-management
+site_description: Manage Proxmox guests and their exposure as code
+docs_dir: docs
+strict: true
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - content.code.copy
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-6
+        name: Switch theme
+
+markdown_extensions:
+  - meta
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Glossary: glossary.md
+  - Decisions:
+      - adr/index.md
+      - "0001 Scope and layers": adr/0001-scope-and-layers.md
+      - "0002 Ansible orchestrates, the engine provisions": adr/0002-ansible-orchestrator-not-opentofu.md
+      - "0003 No state, PVE is the source of truth": adr/0003-no-state-pve-is-the-source-of-truth.md
+      - "0004 Script supply chain": adr/0004-script-supply-chain.md
+      - "0005 Secrets and least privilege": adr/0005-secrets-and-least-privilege.md
+      - "0006 Documentation language and style": adr/0006-documentation-language-and-style.md
+      - "0007 Restore and rebuild": adr/0007-restore-and-rebuild.md
+      - "0008 Update policy": adr/0008-update-policy.md
+      - "0009 External exposure": adr/0009-external-exposure.md
+  - How-to guides:
+      - how-to/provision-a-guest.md
+      - how-to/rebuild-a-guest.md
+      - how-to/expose-a-service.md
+  - Reference:
+      - reference/style-ste100.md
+      - reference/doc-checks.md
+  - Explanation:
+      - explanation/layers.md
+      - explanation/why-not-opentofu.md
+  - Tutorials: tutorials/index.md

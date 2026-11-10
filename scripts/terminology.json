@@ -1,0 +1,20 @@
+{
+  "synonyms": {
+    "guest": ["instance"],
+    "container": ["CT"],
+    "rebuild": ["reprovision"],
+    "drift": ["divergence"],
+    "envelope": ["spec", "specs"],
+    "provision": ["deploy"]
+  },
+  "phrases": [
+    "in order to",
+    "please note",
+    "as you can see",
+    "it is important to",
+    "leverage",
+    "utilize",
+    "utilise",
+    "simply"
+  ]
+}

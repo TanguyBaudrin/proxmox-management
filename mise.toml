@@ -1,0 +1,61 @@
+[tools]
+python = "3.13"
+uv = "0.12"
+vale = "3.26"
+"npm:markdownlint-cli2" = "0.24"
+
+[tasks."docs:setup"]
+description = "Create the documentation virtual environment"
+run = """
+python3 -m venv .venv
+.venv/bin/python -m pip install --quiet --upgrade pip
+.venv/bin/python -m pip install --quiet -r docs/requirements.txt
+"""
+
+[tasks."docs:structure"]
+description = "Check the structure and the mechanical prose rules"
+run = "python3 scripts/check_docs.py"
+
+[tasks."docs:prose"]
+description = "Check the style with Vale"
+run = "vale docs README.md AGENTS.md"
+
+[tasks."docs:spell"]
+description = "Check the spelling with codespell"
+run = ".venv/bin/codespell"
+
+[tasks."docs:style"]
+description = "Lint the Markdown"
+run = "markdownlint-cli2"
+
+[tasks."docs:build"]
+description = "Build the site and fail on any warning"
+run = ".venv/bin/mkdocs build --strict"
+
+[tasks."docs:serve"]
+description = "Serve the documentation locally"
+depends = ["docs:setup"]
+run = ".venv/bin/mkdocs serve"
+
+[tasks."docs:fix"]
+description = "Apply the automatic fixes that exist"
+depends = ["docs:setup"]
+run = """
+markdownlint-cli2 --fix
+.venv/bin/codespell --write-changes
+"""
+
+[tasks."docs:check"]
+description = "Run every documentation check"
+depends = [
+  "docs:setup",
+  "docs:structure",
+  "docs:spell",
+  "docs:style",
+  "docs:prose",
+  "docs:build",
+]
+
+[tasks.check]
+description = "Alias for docs:check while the repository has no code"
+depends = ["docs:check"]

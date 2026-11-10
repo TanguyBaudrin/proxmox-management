@@ -1,0 +1,12 @@
+extends: existence
+message: "Remove '%s'. It adds nothing to the sentence."
+link: https://github.com/tanguybaudrin/proxmox-management/blob/main/docs/reference/style-ste100.md
+level: error
+ignorecase: true
+tokens:
+  - '\bsimply\b'
+  - '\bjust\b'
+  - '\bplease note\b'
+  - '\bas you can see\b'
+  - '\bit is important to\b'
+  - '\beasy\b'

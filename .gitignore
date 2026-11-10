@@ -1,0 +1,18 @@
+# Documentation build
+site/
+.cache/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Local overrides and secrets
+.env
+.env.*
+.mise.local.toml
+secrets/
+*.retry
+
+# macOS
+.DS_Store

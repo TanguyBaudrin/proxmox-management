@@ -1,0 +1,19 @@
+extends: substitution
+message: "Write '%s' instead of the contraction '%s'."
+link: https://github.com/tanguybaudrin/proxmox-management/blob/main/docs/reference/style-ste100.md
+level: error
+ignorecase: true
+swap:
+  "don't": do not
+  "doesn't": does not
+  "can't": cannot
+  "won't": will not
+  "isn't": is not
+  "aren't": are not
+  "didn't": did not
+  "it's": it is
+  "that's": that is
+  "there's": there is
+  "we'll": we will
+  "you'll": you will
+  "I'm": I am

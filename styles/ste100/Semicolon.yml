@@ -1,0 +1,7 @@
+extends: existence
+message: "Do not use a semicolon. Write two sentences."
+link: https://github.com/tanguybaudrin/proxmox-management/blob/main/docs/reference/style-ste100.md
+level: error
+scope: text
+tokens:
+  - ';'

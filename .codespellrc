@@ -1,0 +1,3 @@
+[codespell]
+skip = .git,site,.cache,.venv,node_modules
+ignore-words-list = vzdump,edgeos,vyatta,fnox,proxmox,traefik,mkdocs,diataxis,nygard,hostname,onboot
