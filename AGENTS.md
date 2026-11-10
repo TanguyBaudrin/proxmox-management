@@ -80,10 +80,11 @@ gh pr create --fill
 gh pr merge --squash --auto
 ```
 
-Install the local secret hook once per clone.
+Install the local secret hook once per clone. It scans the staged changes.
+The CI scan covers the full history.
 
 ```bash
-mise generate git-pre-commit --task=secrets:check --write
+mise generate git-pre-commit --task=secrets:staged --write
 ```
 
 ## 5. Layout
@@ -112,6 +113,7 @@ styles/                 Vale style pack
 | `mise run check` | Run the documentation checks and the secret scan |
 | `mise run docs:check` | Run the documentation checks only |
 | `mise run secrets:check` | Scan the full Git history for a secret |
+| `mise run secrets:staged` | Scan the staged changes for a secret |
 | `mise run docs:serve` | Serve the documentation locally |
 | `mise run docs:fix` | Apply the automatic fixes that exist |
 

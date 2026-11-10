@@ -64,6 +64,10 @@ mise run docs:build
 description = "Scan the full history for a secret"
 run = "gitleaks git --redact --no-banner --exit-code 1 ."
 
+[tasks."secrets:staged"]
+description = "Scan the staged changes for a secret"
+run = "gitleaks git --redact --no-banner --exit-code 1 --staged ."
+
 [tasks.check]
 description = "Run every check"
 depends = ["docs:check", "secrets:check"]
