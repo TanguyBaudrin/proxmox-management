@@ -22,7 +22,7 @@ ready.
 | markdownlint | `markdownlint-cli2` | Yes |
 | Spelling | `codespell` | Yes |
 | Style | Vale, `styles/ste100` | Yes |
-| Site build | `mkdocs build --strict` | Yes |
+| Site build | `zensical build --strict` | Yes |
 
 ## What the structure check does
 
@@ -79,8 +79,16 @@ mise run docs:structure   # scripts/check_docs.py
 mise run docs:prose       # vale docs
 mise run docs:spell       # codespell
 mise run docs:style       # markdownlint-cli2
-mise run docs:build       # mkdocs build --strict
+mise run docs:build       # zensical build --strict
 ```
+
+## Publish the site
+
+A push to `main` publishes the site to GitHub Pages. The publish job waits for
+both checks. The address is
+<https://tanguybaudrin.github.io/proxmox-management/>.
+
+See [ADR-0011](../adr/0011-documentation-engine-and-publishing.md).
 
 ## Related
 

@@ -23,6 +23,7 @@ adds a `superseded-by` field.
 | [0008](0008-update-policy.md) | Update policy | accepted |
 | [0009](0009-external-exposure.md) | External exposure | accepted |
 | [0010](0010-public-repository-and-secret-hygiene.md) | Public repository and secret hygiene | accepted |
+| [0011](0011-documentation-engine-and-publishing.md) | Documentation engine and publishing | accepted |
 
 ## Reading order
 
@@ -33,3 +34,4 @@ adds a `superseded-by` field.
 4. Read 0007 and 0008 before the first update.
 5. Read 0009 before the first exposure route.
 6. Read 0010 before you add a guest file to the public repository.
+7. Read 0011 before you change the documentation build or the site.

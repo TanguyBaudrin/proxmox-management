@@ -26,7 +26,8 @@ follow.
 ## Documentation
 
 The documentation uses the [Diataxis](https://diataxis.fr) structure and lives
-in `docs/`. It builds with MkDocs.
+in `docs/`. It builds with [Zensical](https://zensical.org) and publishes to
+[GitHub Pages](https://tanguybaudrin.github.io/proxmox-management/).
 
 ```bash
 mise install

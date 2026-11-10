@@ -23,6 +23,7 @@ run = "vale docs README.md AGENTS.md"
 
 [tasks."docs:spell"]
 description = "Check the spelling with codespell"
+depends = ["docs:setup"]
 run = ".venv/bin/codespell"
 
 [tasks."docs:style"]
@@ -31,12 +32,13 @@ run = "markdownlint-cli2"
 
 [tasks."docs:build"]
 description = "Build the site and fail on any warning"
-run = ".venv/bin/mkdocs build --strict"
+depends = ["docs:setup"]
+run = ".venv/bin/zensical build --strict --clean"
 
 [tasks."docs:serve"]
 description = "Serve the documentation locally"
 depends = ["docs:setup"]
-run = ".venv/bin/mkdocs serve"
+run = ".venv/bin/zensical serve"
 
 [tasks."docs:fix"]
 description = "Apply the automatic fixes that exist"
